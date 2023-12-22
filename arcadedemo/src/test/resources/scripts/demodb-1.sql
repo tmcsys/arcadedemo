@@ -79,41 +79,41 @@ CREATE PROPERTY Orders.OrderDate DATE;
 -- CREATE PROPERTY HasParts.`@in` link OF Component;
 
 CREATE EDGE TYPE IsFromCountry;
-CREATE PROPERTY IsFromCountry.in LINK OF Countries;
-CREATE PROPERTY IsFromCountry.out LINK OF Customers;
+CREATE PROPERTY IsFromCountry.`@in` LINK OF Countries;
+CREATE PROPERTY IsFromCountry.`@out` LINK OF Customers;
 
 CREATE EDGE TYPE HasUsedService;
-CREATE PROPERTY HasUsedService.out LINK OF Customers ;
+CREATE PROPERTY HasUsedService.`@out` LINK OF Customers ;
 
 CREATE EDGE TYPE HasStayed EXTENDS HasUsedService;
-CREATE PROPERTY HasStayed.in LINK OF Hotels;
+CREATE PROPERTY HasStayed.`@in` LINK OF Hotels;
 
 CREATE EDGE TYPE HasEaten EXTENDS HasUsedService;
-CREATE PROPERTY HasEaten.in LINK OF Restaurants;
+CREATE PROPERTY HasEaten.`@in` LINK OF Restaurants;
 
 CREATE EDGE TYPE HasVisited;
-CREATE PROPERTY HasVisited.out LINK OF Customers ;
-CREATE PROPERTY HasVisited.in LINK;
+CREATE PROPERTY HasVisited.`@out` LINK OF Customers ;
+CREATE PROPERTY HasVisited.`@in` LINK;
 CREATE INDEX ON HasVisited (`in`, `out`) UNIQUE;
 
 CREATE EDGE TYPE HasProfile;
-CREATE PROPERTY HasProfile.in LINK OF Profiles;
-CREATE PROPERTY HasProfile.out LINK OF Customers ;
+CREATE PROPERTY HasProfile.`@in` LINK OF Profiles;
+CREATE PROPERTY HasProfile.`@out` LINK OF Customers ;
 
 CREATE EDGE TYPE HasCustomer;
-CREATE PROPERTY HasCustomer.in LINK OF Customers;
-CREATE PROPERTY HasCustomer.out LINK OF Orders ;
+CREATE PROPERTY HasCustomer.`@in` LINK OF Customers;
+CREATE PROPERTY HasCustomer.`@out` LINK OF Orders ;
 
 CREATE EDGE TYPE HasReview;
-CREATE PROPERTY HasReview.in LINK OF Reviews;
+CREATE PROPERTY HasReview.`@in` LINK OF Reviews;
 CREATE PROPERTY HasReview.Stars INTEGER;
 
 CREATE EDGE TYPE MadeReview;
-CREATE PROPERTY MadeReview.out LINK OF Customers ;
+CREATE PROPERTY MadeReview.`@out` LINK OF Customers ;
 
 CREATE EDGE TYPE HasFriend;
-CREATE PROPERTY HasFriend.in LINK OF Profiles;
-CREATE PROPERTY HasFriend.out LINK OF Profiles;
+CREATE PROPERTY HasFriend.`@in` LINK OF Profiles;
+CREATE PROPERTY HasFriend.`@out` LINK OF Profiles;
 
 CREATE INDEX ON Customers(OrderedId) UNIQUE;
 CREATE INDEX ON Reviews(Id) UNIQUE;

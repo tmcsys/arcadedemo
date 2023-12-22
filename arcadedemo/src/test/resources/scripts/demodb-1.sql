@@ -94,7 +94,7 @@ CREATE PROPERTY HasEaten.`@in` LINK OF Restaurants;
 CREATE EDGE TYPE HasVisited;
 CREATE PROPERTY HasVisited.`@out` LINK OF Customers ;
 CREATE PROPERTY HasVisited.`@in` LINK;
-CREATE INDEX ON HasVisited (`in`, `out`) UNIQUE;
+CREATE INDEX ON HasVisited (`@in`, `@out`) UNIQUE;
 
 CREATE EDGE TYPE HasProfile;
 CREATE PROPERTY HasProfile.`@in` LINK OF Profiles;

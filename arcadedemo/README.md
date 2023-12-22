@@ -15,7 +15,7 @@ copy the <b>scripts</b> directory to the root directory of your ArcadeDB install
 
 %: /bin/console.sh
 
-%: load scripts/build.sql builds the initial OrientDemoDB
+%: load scripts/build.sql - builds the initial OrientDemoDB
 
-%: load scripts/rebuild.sql drops and rebuilds the database
+%: load scripts/rebuild.sql - drops, creates, and rebuilds OrientDemoDB
 
